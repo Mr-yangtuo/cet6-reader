@@ -1,0 +1,12 @@
+{
+  "name": "cet6-reader",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "vendor": "node scripts/vendor.mjs",
+    "serve": "python -m http.server 8765 --bind 127.0.0.1 --directory docs",
+    "check": "node --check docs/app.js && node --check docs/reader.js"
+  },
+  "dependencies": { "pdfjs-dist": "6.5.438" }
+}

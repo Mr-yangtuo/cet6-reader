@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fffefa">
+  <title>PDF 阅读 · 六级随身读</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="reader-body">
+  <main class="reader-shell">
+    <header class="reader-header">
+      <a href="./" id="back" class="back-link" aria-label="返回书架">‹</a>
+      <div class="reader-heading"><h1 id="document-title">正在打开 PDF…</h1><p id="document-kind">六级随身读</p></div>
+      <a id="download" class="download-link" hidden download>下载</a>
+    </header>
+    <nav class="reader-tools" aria-label="阅读工具">
+      <a id="pair-link" class="pair-link" hidden></a>
+      <div class="zoom-controls">
+        <button class="tool-button" id="zoom-out" aria-label="缩小" disabled>−</button>
+        <button class="tool-button" id="fit" aria-label="恢复适合宽度" disabled>适宽</button>
+        <button class="tool-button" id="zoom-in" aria-label="放大" disabled>＋</button>
+      </div>
+    </nav>
+    <section class="reader-content" aria-label="PDF 内容">
+      <div class="pdf-viewport" id="viewport" tabindex="0" aria-label="PDF 阅读区域，可滚动"><div class="canvas-wrap" id="canvas-wrap"></div></div>
+      <div id="status" class="reader-status" role="status"><span class="spinner" aria-hidden="true"></span><span id="status-text">正在加载 PDF…</span></div>
+    </section>
+    <footer class="reader-bottom">
+      <button id="previous" class="page-button" disabled>‹ 上一页</button>
+      <form id="page-form" class="page-form"><label for="page-number" class="sr-only">跳转到页码，输入后按回车</label><input id="page-number" type="number" min="1" value="1" inputmode="numeric" enterkeyhint="go" disabled><span>/ <span id="page-total">—</span> 页</span></form>
+      <button id="next" class="page-button" disabled>下一页 ›</button>
+    </footer>
+  </main>
+  <noscript><p>请启用 JavaScript 以使用阅读器。<a href="./">返回书架</a></p></noscript>
+  <script type="module" src="reader.js"></script>
+</body>
+</html>
