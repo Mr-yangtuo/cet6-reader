@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#fffefa">
   <title>PDF 阅读 · 六级随身读</title>
   <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body class="reader-body">
   <main class="reader-shell">
@@ -24,16 +24,15 @@
       </div>
     </nav>
     <section class="reader-content" aria-label="PDF 内容">
-      <div class="pdf-viewport" id="viewport" tabindex="0" aria-label="PDF 阅读区域，可滚动"><div class="canvas-wrap" id="canvas-wrap"></div></div>
+      <div class="pdf-viewport" id="viewport" tabindex="0" aria-label="PDF 阅读区域，上下连续滚动"><div class="pdf-pages" id="pdf-pages"></div></div>
       <div id="status" class="reader-status" role="status"><span class="spinner" aria-hidden="true"></span><span id="status-text">正在加载 PDF…</span></div>
     </section>
     <footer class="reader-bottom">
-      <button id="previous" class="page-button" disabled>‹ 上一页</button>
-      <form id="page-form" class="page-form"><label for="page-number" class="sr-only">跳转到页码，输入后按回车</label><input id="page-number" type="number" min="1" value="1" inputmode="numeric" enterkeyhint="go" disabled><span>/ <span id="page-total">—</span> 页</span></form>
-      <button id="next" class="page-button" disabled>下一页 ›</button>
+      <span>上下滑动阅读</span>
+      <span aria-label="当前阅读页码">第 <span id="current-page">1</span> / <span id="page-total">—</span> 页</span>
     </footer>
   </main>
   <noscript><p>请启用 JavaScript 以使用阅读器。<a href="./">返回书架</a></p></noscript>
-  <script type="module" src="reader.js"></script>
+  <script type="module" src="reader.js?v=2"></script>
 </body>
 </html>
